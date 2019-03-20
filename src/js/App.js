@@ -1,9 +1,16 @@
 import React, {Component} from 'react'
+import Header from './component/Header'
+import Body from './component/Body'
+import Footer from './component/Footer'
 
 class App extends Component {
 	render() {
 		return (
-			<h1 className="App">App</h1>
+			<div>
+				<Header/>
+				<Body/>
+				<Footer/>
+			</div>
 		)
 	}
 }
