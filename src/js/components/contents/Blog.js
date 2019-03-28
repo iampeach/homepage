@@ -24,19 +24,16 @@ export default class Blog extends Component {
 		})
 	}
 	addInitRows = id => {
-		console.log('test111')
 		var init_row = this.state.init_row
-		init_row[id] = true
 		this.setState({ init_row: init_row })
 	}
 	render() {
-		console.log(this.state.init_row)
 		var numrows = 3, numblocks
 		switch(true) {
-			case (this.state.width < 700):
+			case (this.state.width < 800):
 				numblocks = 1
 				break
-			case (this.state.width < 1050):
+			case (this.state.width < 1200):
 				numblocks = 2
 				break
 			default:
