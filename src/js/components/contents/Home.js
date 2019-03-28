@@ -3,7 +3,13 @@ import React, { Component } from 'react'
 export default class Home extends Component {
 	render() {
 		return(
-			<h1>Home</h1>
+			<div className='fl-row w-100p'>
+				<div className='font-pri w-50p mr-100 f3'>
+					<h1>Hello,</h1>
+					<h1>I'm Lin Cheng Wei</h1>
+				</div>
+				<div className='w-50p'>Image here.</div>
+			</div>
 		)
 	}
 }
