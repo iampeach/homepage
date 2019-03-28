@@ -18,8 +18,8 @@ export default class Header extends Component {
 				captions.push(<hr className='fl-0-1 chosen-line mr-0 up-mr-25 d-mr-20 pd-0 gold b-none b-l-solid b-1 skew-320' key={this.props.contents.length}/>)
 		}
 		return (
-			<div className="mr-0 pd-0 fl-row fl-center font-pri">
-				<div className="w-200 fl-0-1" />
+			<div className="mr-0 d-mr-50 pd-0 fl-row fl-center font-pri">
+				<div className="w-500 fl-0-1" />
 				<div className="fl-row fl-end fl-0-0">
 					{captions}
 				</div>
