@@ -17,8 +17,8 @@ export default class Content extends Component {
 					<Route exact path='/' render={() => <Home className={style} />} />
 					<Route path='/about' component={About} />
 					<Route path='/skill' component={Skills} />
-					<Route path='/experience' component={Experience} />
-					<Route path='/portfolio' component={Portfolio} />
+					{/* <Route path='/experience' component={Experience} /> */}
+					{/* <Route path='/portfolio' component={Portfolio} /> */}
 					<Route path='/blog' render={() => <Blog className={style} />} />
 					<Route path='/contact' component={Contact} />
 				</Switch>

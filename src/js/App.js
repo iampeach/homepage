@@ -12,12 +12,19 @@ class App extends Component {
 				{ url: '/'							,text: 'Home' },
 				{ url: '/about'					,text: 'About' },
 				{ url: '/skill'					,text: 'Skills' },
-				{ url: '/experience'		,text: 'Experience' },
-				{ url: '/portfolio'			,text: 'Portfolio' },
+				// { url: '/experience'		,text: 'Experience' },
+				// { url: '/portfolio'			,text: 'Portfolio' },
 				{ url: '/blog'					,text: 'Blog' },
 				{ url: '/contact'				,text: 'Contact' }
 			]
 		}
+	}
+	componentDidMount() {
+		var curURL = this.state.contents.find(this.getContentByURL)
+		this.change_page(this.state.contents.indexOf(curURL))
+	}
+	getContentByURL = (item, index, array) => {
+		return item.url === this.props.location.pathname
 	}
 	change_page = id => {
 		this.setState({ chosen: id })
