@@ -5,7 +5,7 @@ export default class ArticleBlock extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			style: 'h-500 w-300 mr-20 bg-washed-blue fl-0-0 animate-fade-in animated'
+			style: 'h-500 w-350 mr-20 bg-washed-blue fl-0-0 animate-fade-in animated'
 		}
 	}
 	componentDidMount() {
