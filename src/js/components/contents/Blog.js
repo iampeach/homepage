@@ -8,7 +8,7 @@ export default class Blog extends Component {
 		this.state = {
 			height: window.innerHeight,
 			width: window.innerWidth,
-			init_row: [false, false, false]
+			num_init_rows: 0
 		}
 	}
 	componentDidMount() {
@@ -24,8 +24,7 @@ export default class Blog extends Component {
 		})
 	}
 	addInitRows = id => {
-		var init_row = this.state.init_row
-		this.setState({ init_row: init_row })
+		this.setState( state => ({ num_init_rows: state.num_init_rows+1 }))
 	}
 	render() {
 		var numrows = 3, numblocks
@@ -44,7 +43,7 @@ export default class Blog extends Component {
 		var article_blocks = []
 		for (let i = 0; i < numrows; ++i){
 			let delay = 0
-			if (this.state.init_row[i]) delay = 3*i
+			if (i < this.state.num_init_rows) delay = 3*i
 			article_blocks.push(<ArticleRow
 														numblocks={numblocks}
 														delay={delay}
