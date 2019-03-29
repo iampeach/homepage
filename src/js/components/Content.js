@@ -15,12 +15,12 @@ export default class Content extends Component {
 			<div className="mr-0 pd-0 fl-row fl-center">
 				<Switch>
 					<Route exact path='/' render={() => <Home className={style} />} />
-					<Route path='/about' component={About} />
+					<Route path='/about' render={() => <About className={style} />} />
 					<Route path='/skill' component={Skills} />
 					{/* <Route path='/experience' component={Experience} /> */}
 					{/* <Route path='/portfolio' component={Portfolio} /> */}
 					<Route path='/blog' render={() => <Blog className={style} />} />
-					<Route path='/contact' component={Contact} />
+					<Route path='/contact' render={() => <Contact className={style} />} />
 				</Switch>
 			</div>
 		)
