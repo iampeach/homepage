@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import ArticleBlock from './ArticleBlock'
 import { setDelay } from '../../../utils/animation'
 
@@ -9,12 +8,13 @@ export default class ArticleRow extends Component {
 		this.initialized = false
 		this.added = false
 		this.rectTop = 0
+		this.node = React.createRef()
 		this.getRectTopInterval = undefined
 		this.checkInterval = undefined
 	}
 	componentDidMount() {
 		this.getRectTopInterval = setInterval(() => {
-			const rect = ReactDOM.findDOMNode(this).getBoundingClientRect()
+			const rect = this.node.getBoundingClientRect()
 			if (rect.top === this.rectTop)
 				this.initialized = true
 			else this.rectTop = rect.top
@@ -42,7 +42,7 @@ export default class ArticleRow extends Component {
 			articleblocks.push(<ArticleBlock delay={setDelay(2*i+this.props.delay)} windowHeight={this.props.windowHeight} key={i} />)
 		}
 		return(
-			<div className="fl-row fl-center">
+			<div className="fl-row fl-center" ref={node=>this.node=node}>
 				{articleblocks}
 			</div>
 		)

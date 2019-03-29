@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 
 export default class ArticleBlock extends Component {
 	constructor(props) {
@@ -9,12 +8,13 @@ export default class ArticleBlock extends Component {
 		}
 		this.initialized = false
 		this.rectTop = 0
+		this.node = React.createRef()
 		this.getRectTopInterval = undefined
 		this.checkInterval = undefined
 	}
 	componentDidMount() {
 		this.getRectTopInterval = setInterval(() => {
-			const rect = ReactDOM.findDOMNode(this).getBoundingClientRect()
+			const rect = this.node.getBoundingClientRect()
 			if (rect.top === this.rectTop)
 				this.initialized = true
 			else this.rectTop = rect.top
@@ -27,15 +27,14 @@ export default class ArticleBlock extends Component {
 	}
 	checkInVision = _ => {
 		if (this.initialized) {
-			var node = ReactDOM.findDOMNode(this)
-			if (this.rectTop <= this.props.windowHeight-150 && !node.classList.contains('fade-in-up')){
+			if (this.rectTop <= this.props.windowHeight-150 && !this.node.classList.contains('fade-in-up')){
 				this.setState({ style: this.state.style + ' fade-in-up' })
 			}
 		}
 	}
 	render() {
 		return(
-			<div className={this.state.style + this.props.delay}>
+			<div className={this.state.style + this.props.delay} ref={node=>this.node=node}>
 				<h1>Something here</h1>
 			</div>
 		)
