@@ -11,7 +11,7 @@ export default class ArticleRow extends Component {
 		window.scroll(0, 1)
 		setTimeout(()=>{
 			window.removeEventListener('scroll', this.checkInVision)
-		}, 100)
+		}, 0)
 	}
 	inVision = _ => {
 		this.props.addInitRows()
