@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Home from './contents/Home'
 import About from './contents/About'
-import Skills from './contents/Skills'
+import Skill from './contents/Skill'
 import Experience from './contents/Experience'
 import Portfolio from './contents/Portfolio'
 import Blog from './contents/Blog'
@@ -16,7 +16,7 @@ export default class Content extends Component {
 				<Switch>
 					<Route exact path='/' render={() => <Home className={style} />} />
 					<Route path='/about' render={() => <About className={style} />} />
-					<Route path='/skill' component={Skills} />
+					<Route path='/skill' render={() => <Skill className={style} />} />
 					{/* <Route path='/experience' component={Experience} /> */}
 					{/* <Route path='/portfolio' component={Portfolio} /> */}
 					<Route path='/blog' render={() => <Blog className={style} />} />
