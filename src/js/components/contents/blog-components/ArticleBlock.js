@@ -4,7 +4,7 @@ export default class ArticleBlock extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			style: 'h-500 w-350 mr-20 bg-washed-blue fl-0-0 animate-fade-in animated'
+			style: 'h-500 w-350 mr-20 fl-0-0 shadow-0-0-10 animate-fade-in animated'
 		}
 		this.initialized = false
 		this.rectTop = 0
@@ -35,7 +35,11 @@ export default class ArticleBlock extends Component {
 	render() {
 		return(
 			<div className={this.state.style + this.props.delay} ref={node=>this.node=node}>
-				<h1>Something here</h1>
+				<img className='w-100p' src={this.props.blog_datas.img} />
+				<div className='pd-0-30'>
+					<h2 className='font-pri'>{this.props.blog_datas.title}</h2>
+					<h3 className='font-sec light'>{this.props.blog_datas.content}</h3>
+				</div>
 			</div>
 		)
 	}

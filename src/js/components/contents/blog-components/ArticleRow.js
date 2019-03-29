@@ -39,7 +39,7 @@ export default class ArticleRow extends Component {
 	render() {
 		var articleblocks = []
 		for (let i = 0; i < this.props.numblocks; ++i) {
-			articleblocks.push(<ArticleBlock delay={setDelay(2*i+this.props.delay)} windowHeight={this.props.windowHeight} key={i} />)
+			articleblocks.push(<ArticleBlock blog_datas={this.props.blog_datas[i]} delay={setDelay(2*i+this.props.delay)} windowHeight={this.props.windowHeight} key={i} />)
 		}
 		return(
 			<div className="fl-row fl-center" ref={node=>this.node=node}>
