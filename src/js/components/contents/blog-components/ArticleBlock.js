@@ -7,19 +7,31 @@ export default class ArticleBlock extends Component {
 		this.state = {
 			style: 'h-500 w-350 mr-20 bg-washed-blue fl-0-0 animate-fade-in animated'
 		}
+		this.initialized = false
+		this.rectTop = 0
+		this.getRectTopInterval = undefined
+		this.checkInterval = undefined
 	}
 	componentDidMount() {
-		window.addEventListener('scroll', this.scrollController)
-		window.scroll(0, 1) // Trigger the event
+		this.getRectTopInterval = setInterval(() => {
+			const rect = ReactDOM.findDOMNode(this).getBoundingClientRect()
+			if (rect.top === this.rectTop)
+				this.initialized = true
+			else this.rectTop = rect.top
+		}, 10)
+		this.checkInterval = setInterval(this.checkInVision, 10)
 	}
 	componentWillUnmount() {
-		window.removeEventListener('scroll', this.scrollController)
+		clearInterval(this.getRectTopInterval)
+		clearInterval(this.checkInterval)
 	}
-	scrollController = _ => {
-		var node = ReactDOM.findDOMNode(this)
-		var rect = node.getBoundingClientRect()
-		if (rect.top <= this.props.windowHeight-150 && !node.classList.contains('fade-in-up'))
+	checkInVision = _ => {
+		if (this.initialized) {
+			var node = ReactDOM.findDOMNode(this)
+			if (this.rectTop <= this.props.windowHeight-150 && !node.classList.contains('fade-in-up')){
 				this.setState({ style: this.state.style + ' fade-in-up' })
+			}
+		}
 	}
 	render() {
 		return(
