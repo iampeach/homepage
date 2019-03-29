@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class AboutBlock extends Component {
 	render() {
-		const className = 'font-sec pd-0-150 animated animate-fade-in fade-in-up' + this.props.delay
+		const className = 'font-sec d-mr-50 pd-0-150 animated animate-fade-in fade-in-up' + this.props.delay
 		return(
 			<div className={className}>
 				<h2 className='dark-grey'>{this.props.text.title}</h2>

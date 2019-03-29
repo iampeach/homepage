@@ -21,9 +21,8 @@ export default class About extends Component {
 	render() {
 		var abouts = this.state.text.map((text,idx) => 
 			<AboutBlock key={idx} delay={setDelay(5*idx)} text={text}/>)
-		var style = this.props.className.concat(' fl-col align-stretch')
 		return(
-			<div className={style}>
+			<div className={this.props.className}>
 				{abouts}
 			</div>
 		)
