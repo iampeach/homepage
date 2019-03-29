@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 
 export default class Home extends Component {
 	render() {
+		var style = this.props.className.concat(' fl-row w-100p')
 		return(
-			<div className='fl-row w-100p'>
+			<div className={style}>
 				<div className='font-pri w-50p mr-100 animated aminate-fade-in fade-in-up'>
 					<h1 className='f2'>Hello,</h1>
 					<h1 className='f2'>I'm Lin Cheng Wei</h1>
