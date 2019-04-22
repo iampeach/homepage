@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import ArticleBlock from './blog-components/ArticleBlock'
 import ArticleRow from './blog-components/ArticleRow'
-import { img1, img2, img3, img4, img5, img6, img7, img8, img9 } from './blog-components/img/'
 
 export default class Blog extends Component {
 	constructor(props) {
@@ -11,15 +10,15 @@ export default class Blog extends Component {
 			width: window.innerWidth,
 			num_init_rows: 0,
 			blog_datas: [
-				{title: '1st', content: '1', img: img1},
-				{title: '2nd', content: '2', img: img2},
-				{title: '3rd', content: '3', img: img3},
-				{title: '4st', content: '4', img: img4},
-				{title: '5st', content: '5', img: img5},
-				{title: '6st', content: '6', img: img6},
-				{title: '7st', content: '7', img: img7},
-				{title: '8st', content: '8', img: img8},
-				{title: '9st', content: '9', img: img9}
+				{title: '1st', content: '1', img: "https://live.staticflickr.com/65535/33787024588_6d088364e5_k.jpg"},
+				{title: '2nd', content: '2', img: "https://live.staticflickr.com/65535/47664398791_31ac2b10a3_k.jpg"},
+				{title: '3rd', content: '3', img: "https://live.staticflickr.com/65535/47664397851_b025062819_k.jpg"},
+				{title: '4st', content: '4', img: "https://live.staticflickr.com/65535/47664396941_cf249096ea_k.jpg"},
+				{title: '5st', content: '5', img: "https://live.staticflickr.com/65535/47664400251_2c01b48e0e_k.jpg"},
+				{title: '6st', content: '6', img: "https://live.staticflickr.com/65535/46748654525_caab20a730_k.jpg"},
+				{title: '7st', content: '7', img: "https://live.staticflickr.com/65535/32721770047_70aa5d657f_k.jpg"},
+				{title: '8st', content: '8', img: "https://live.staticflickr.com/65535/33787027618_350af8986b_k.jpg"},
+				{title: '9st', content: '9', img: "https://live.staticflickr.com/65535/33787032078_a0fe2adf0f_k.jpg"}
 			]
 		}
 	}
